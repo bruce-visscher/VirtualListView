@@ -7,7 +7,7 @@ namespace VirtualModeListView
 {
     public partial class Form1 : Form
     {
-        private const int maxLines = 1000000;
+        private const int maxLines = 10;
         private NumberText nt = new NumberText();
 
         System.Collections.Generic.List<ListViewItem> listOfLVI = new List<ListViewItem>();
@@ -29,10 +29,12 @@ namespace VirtualModeListView
             listView1.VirtualMode = true;
             listView1.VirtualListSize = maxLines;
             toolStripStatusLabel2.Text = maxLines.ToString();
-            
+
+
+
             for (int l = 0; l <= maxLines; l++)
             {
-                NewListViewItem = new ListViewItem("OrgName " + l );
+                NewListViewItem = new ListViewItem("OrgName " + l);
                 NewListViewItem.Name = "OrgKey" + l;
                 listOfLVI.Add(NewListViewItem);
             }
@@ -45,7 +47,7 @@ namespace VirtualModeListView
         {
             ListViewItem lvi = new ListViewItem();
             lvi = listOfLVI[e.ItemIndex];
-            
+
             ListViewItem.ListViewSubItem lvsi = new ListViewItem.ListViewSubItem();
             lvsi.Text = lvi.Text;
             lvi.SubItems.Add(lvsi);
@@ -57,6 +59,28 @@ namespace VirtualModeListView
         {
             AboutBox1 ab1 = new AboutBox1();
             ab1.ShowDialog(this);
+        }
+
+        private void Move_Click(object sender, EventArgs e)
+        {
+            // Get element text of selected Index
+            ListView.SelectedIndexCollection col = listView1.SelectedIndices;
+
+            foreach (var eachItemInCollection in col)
+            {
+                Console.WriteLine(listView1.Items[Convert.ToInt32(eachItemInCollection)].Text);
+                //  ListViewItem lvi = listView1.GetItemAt(Convert.ToInt32(eachItemInCollection), 0);
+            }
+
+            /* {"When the ListView is in virtual mode, you cannot enumerate through the ListView items collection
+            using an enumerator or call GetEnumerator. 
+            Use the ListView items indexer instead and access an item by index value."}
+            
+            foreach (ListViewItem lvi in listView1.Items)
+            {
+                //    Console.WriteLine(lvi.Text);
+            }
+            */
         }
     }
 }

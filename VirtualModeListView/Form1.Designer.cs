@@ -41,6 +41,7 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.Move = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,7 +91,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             resources.ApplyResources(this.listView1, "listView1");
-            this.listView1.MultiSelect = false;
+            this.listView1.MultiSelect = true;
             this.listView1.Name = "listView1";
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -118,6 +119,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Move);
             this.panel1.Controls.Add(this.listView2);
             this.panel1.Controls.Add(this.listView1);
             resources.ApplyResources(this.panel1, "panel1");
@@ -129,13 +131,20 @@
             this.listView2.Name = "listView2";
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
+            // Move
+            // 
+            resources.ApplyResources(this.Move, "Move");
+            this.Move.Name = "Move";
+            this.Move.UseVisualStyleBackColor = true;
+            this.Move.Click += new System.EventHandler(this.Move_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.statusStrip1);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -162,6 +171,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Button Move;
     }
 }
 
