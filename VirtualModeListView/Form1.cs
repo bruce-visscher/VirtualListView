@@ -7,7 +7,7 @@ namespace VirtualModeListView
 {
     public partial class Form1 : Form
     {
-        private int maxLines = 10;
+        private int maxLines = 1000;
         
         private NumberText nt = new NumberText();
 
@@ -81,16 +81,19 @@ namespace VirtualModeListView
         private void remove_Click(object sender, EventArgs e)
         {
             // Get element text of selected Index
-            ListView.SelectedIndexCollection col = listView1.SelectedIndices;
-            
+            ListView.SelectedIndexCollection col = listView1.SelectedIndices;            
             List<int> listOfIndexestoRemove = new List<int>();
-            foreach (var indexOfElementToRemove in col)
+            foreach (var elementToRemove in col)
             {
-                int index = Convert.ToInt32(indexOfElementToRemove);
-                listOfLVI.RemoveAt(index);
-                Console.WriteLine();
-                maxLines = maxLines - 1;
+                int index = Convert.ToInt32(elementToRemove);
+                listOfIndexestoRemove.Add(index);
             }
+            listOfIndexestoRemove.Reverse();
+            foreach (int indexOfElementToRemove in listOfIndexestoRemove)
+            {
+                listOfLVI.RemoveAt(indexOfElementToRemove);
+                maxLines = maxLines - 1;
+            }            
             listView1.VirtualListSize = maxLines;
         }
 
