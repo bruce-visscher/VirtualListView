@@ -7,7 +7,8 @@ namespace VirtualModeListView
 {
     public partial class Form1 : Form
     {
-        private const int maxLines = 10;
+        private int maxLines = 10;
+        
         private NumberText nt = new NumberText();
 
         System.Collections.Generic.List<ListViewItem> listOfLVI = new List<ListViewItem>();
@@ -29,12 +30,10 @@ namespace VirtualModeListView
             listView1.VirtualMode = true;
             listView1.VirtualListSize = maxLines;
             toolStripStatusLabel2.Text = maxLines.ToString();
-
-
-
-            for (int l = 0; l <= maxLines; l++)
+            
+            for (int l = 0; l < maxLines; l++)
             {
-                NewListViewItem = new ListViewItem("OrgName " + l);
+                NewListViewItem = new ListViewItem("OrgName " + l + "NG");
                 NewListViewItem.Name = "OrgKey" + l;
                 listOfLVI.Add(NewListViewItem);
             }
@@ -65,22 +64,38 @@ namespace VirtualModeListView
         {
             // Get element text of selected Index
             ListView.SelectedIndexCollection col = listView1.SelectedIndices;
-
             foreach (var eachItemInCollection in col)
             {
                 Console.WriteLine(listView1.Items[Convert.ToInt32(eachItemInCollection)].Text);
-                //  ListViewItem lvi = listView1.GetItemAt(Convert.ToInt32(eachItemInCollection), 0);
             }
-
-            /* {"When the ListView is in virtual mode, you cannot enumerate through the ListView items collection
-            using an enumerator or call GetEnumerator. 
-            Use the ListView items indexer instead and access an item by index value."}
-            
-            foreach (ListViewItem lvi in listView1.Items)
-            {
-                //    Console.WriteLine(lvi.Text);
-            }
-            */
         }
+
+        // Remove Item
+        /* A virtual list knows nothing about your list of items. 
+         * It doesn't keep track of them, not even a small set. 
+         * It only ever asks "what do you want to show at the n'th row?"
+         * If your master list changes, all you need to do is redraw the list. 
+         * Invalidate() will do that for you. 
+         * The listview will then ask you again what it should show at every row visible in the control.
+        */
+        private void remove_Click(object sender, EventArgs e)
+        {
+            // Get element text of selected Index
+            ListView.SelectedIndexCollection col = listView1.SelectedIndices;
+            
+            List<int> listOfIndexestoRemove = new List<int>();
+            foreach (var indexOfElementToRemove in col)
+            {
+                int index = Convert.ToInt32(indexOfElementToRemove);
+                listOfLVI.RemoveAt(index);
+                Console.WriteLine();
+                maxLines = maxLines - 1;
+            }
+            listView1.VirtualListSize = maxLines;
+        }
+
+        // Add Item
+
+        // Sort List
     }
 }

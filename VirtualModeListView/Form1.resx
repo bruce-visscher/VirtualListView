@@ -195,7 +195,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 297</value>
@@ -240,6 +240,30 @@
   <data name="toolStripStatusLabel2.Text" xml:space="preserve">
     <value>toolStripStatusLabel2</value>
   </data>
+  <data name="remove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>522, 297</value>
+  </data>
+  <data name="remove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 31</value>
+  </data>
+  <data name="remove.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="remove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;remove.Name" xml:space="preserve">
+    <value>remove</value>
+  </data>
+  <data name="&gt;&gt;remove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;remove.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;remove.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="Move.Location" type="System.Drawing.Point, System.Drawing">
     <value>334, 292</value>
   </data>
@@ -250,7 +274,7 @@
     <value>2</value>
   </data>
   <data name="Move.Text" xml:space="preserve">
-    <value>Move</value>
+    <value>GetElementValue</value>
   </data>
   <data name="&gt;&gt;Move.Name" xml:space="preserve">
     <value>Move</value>
@@ -262,7 +286,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;Move.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="listView2.Location" type="System.Drawing.Point, System.Drawing">
     <value>786, 20</value>
@@ -283,7 +307,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;listView2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

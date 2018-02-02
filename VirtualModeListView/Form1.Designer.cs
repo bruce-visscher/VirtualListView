@@ -40,8 +40,9 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.Move = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.remove = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,12 +87,10 @@
             // 
             // listView1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {this.columnHeader1});
             this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
+            //this.listView1.GridLines = true;
             resources.ApplyResources(this.listView1, "listView1");
-            this.listView1.MultiSelect = true;
             this.listView1.Name = "listView1";
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -119,17 +118,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.remove);
             this.panel1.Controls.Add(this.Move);
             this.panel1.Controls.Add(this.listView2);
             this.panel1.Controls.Add(this.listView1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // listView2
-            // 
-            resources.ApplyResources(this.listView2, "listView2");
-            this.listView2.Name = "listView2";
-            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // Move
             // 
@@ -137,6 +131,19 @@
             this.Move.Name = "Move";
             this.Move.UseVisualStyleBackColor = true;
             this.Move.Click += new System.EventHandler(this.Move_Click);
+            // 
+            // listView2
+            // 
+            resources.ApplyResources(this.listView2, "listView2");
+            this.listView2.Name = "listView2";
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // remove
+            // 
+            resources.ApplyResources(this.remove, "remove");
+            this.remove.Name = "remove";
+            this.remove.UseVisualStyleBackColor = true;
+            this.remove.Click += new System.EventHandler(this.remove_Click);
             // 
             // Form1
             // 
@@ -172,6 +179,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button Move;
+        private System.Windows.Forms.Button remove;
     }
 }
 
