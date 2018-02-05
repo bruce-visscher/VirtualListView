@@ -7,8 +7,8 @@ namespace VirtualModeListView
 {
     public partial class Form1 : Form
     {
-        private int maxLines = 1000;
-        
+        private static int maxLines = 5;
+
         private NumberText nt = new NumberText();
 
         System.Collections.Generic.List<ListViewItem> listOfLVI = new List<ListViewItem>();
@@ -25,12 +25,13 @@ namespace VirtualModeListView
             Close();
         }
 
+        // Populate Items
         private void Form1_Load(object sender, EventArgs e)
         {
-            listView1.VirtualMode = true;
-            listView1.VirtualListSize = maxLines;
+            listView.VirtualMode = true;
+            listView.VirtualListSize = maxLines;
             toolStripStatusLabel2.Text = maxLines.ToString();
-            
+
             for (int l = 0; l < maxLines; l++)
             {
                 NewListViewItem = new ListViewItem("OrgName " + l + "NG");
@@ -39,7 +40,7 @@ namespace VirtualModeListView
             }
 
             PropertyInfo aProp = typeof(ListView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
-            aProp.SetValue(listView1, true, null);
+            aProp.SetValue(listView, true, null);
         }
 
         private void listView1_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
@@ -63,10 +64,10 @@ namespace VirtualModeListView
         private void Move_Click(object sender, EventArgs e)
         {
             // Get element text of selected Index
-            ListView.SelectedIndexCollection col = listView1.SelectedIndices;
+            ListView.SelectedIndexCollection col = listView.SelectedIndices;
             foreach (var eachItemInCollection in col)
             {
-                Console.WriteLine(listView1.Items[Convert.ToInt32(eachItemInCollection)].Text);
+                Console.WriteLine(listView.Items[Convert.ToInt32(eachItemInCollection)].Text);
             }
         }
 
@@ -81,24 +82,46 @@ namespace VirtualModeListView
         private void remove_Click(object sender, EventArgs e)
         {
             // Get element text of selected Index
-            ListView.SelectedIndexCollection col = listView1.SelectedIndices;            
+            ListView.SelectedIndexCollection col = listView.SelectedIndices;
             List<int> listOfIndexestoRemove = new List<int>();
             foreach (var elementToRemove in col)
             {
                 int index = Convert.ToInt32(elementToRemove);
                 listOfIndexestoRemove.Add(index);
             }
+
+            // Very imp step
             listOfIndexestoRemove.Reverse();
+
             foreach (int indexOfElementToRemove in listOfIndexestoRemove)
             {
                 listOfLVI.RemoveAt(indexOfElementToRemove);
                 maxLines = maxLines - 1;
-            }            
-            listView1.VirtualListSize = maxLines;
+            }
+            listView.VirtualListSize = maxLines;
         }
 
         // Add Item
+        private void AddItems_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("maxLines: " + maxLines);
+            int count = maxLines;
+            for (int l = count; l < (count + 5); l++)
+            {
+                NewListViewItem = new ListViewItem("OrgName " + l + "FZZ");
+                NewListViewItem.Name = "OrgKey" + l;
+                listOfLVI.Add(NewListViewItem);
+                maxLines = maxLines + 1;
+            }
 
-        // Sort List
+            foreach (ListViewItem each in listOfLVI)
+            {
+                String eachString = each.Text;
+
+            }
+
+            // listOfLVI.Sort();
+            listView.VirtualListSize = maxLines;
+        }
     }
 }

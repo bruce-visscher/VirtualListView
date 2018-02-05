@@ -34,15 +34,16 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Move = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.remove = new System.Windows.Forms.Button();
+            this.GetElementValue = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.AddItems = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,14 +88,14 @@
             // 
             // listView1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {this.columnHeader1});
-            this.listView1.FullRowSelect = true;
-            //this.listView1.GridLines = true;
-            resources.ApplyResources(this.listView1, "listView1");
-            this.listView1.Name = "listView1";
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listView1_RetrieveVirtualItem);
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView.FullRowSelect = true;
+            resources.ApplyResources(this.listView, "listView1");
+            this.listView.Name = "listView1";
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listView1_RetrieveVirtualItem);
             // 
             // statusStrip1
             // 
@@ -118,25 +119,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.AddItems);
             this.panel1.Controls.Add(this.remove);
-            this.panel1.Controls.Add(this.Move);
+            this.panel1.Controls.Add(this.GetElementValue);
             this.panel1.Controls.Add(this.listView2);
-            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Controls.Add(this.listView);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // Move
-            // 
-            resources.ApplyResources(this.Move, "Move");
-            this.Move.Name = "Move";
-            this.Move.UseVisualStyleBackColor = true;
-            this.Move.Click += new System.EventHandler(this.Move_Click);
-            // 
-            // listView2
-            // 
-            resources.ApplyResources(this.listView2, "listView2");
-            this.listView2.Name = "listView2";
-            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // remove
             // 
@@ -144,6 +133,26 @@
             this.remove.Name = "remove";
             this.remove.UseVisualStyleBackColor = true;
             this.remove.Click += new System.EventHandler(this.remove_Click);
+            // 
+            // GetElementValue
+            // 
+            resources.ApplyResources(this.GetElementValue, "GetElementValue");
+            this.GetElementValue.Name = "GetElementValue";
+            this.GetElementValue.UseVisualStyleBackColor = true;
+            this.GetElementValue.Click += new System.EventHandler(this.Move_Click);
+            // 
+            // listView2
+            // 
+            resources.ApplyResources(this.listView2, "listView2");
+            this.listView2.Name = "listView2";
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // AddItems
+            // 
+            resources.ApplyResources(this.AddItems, "AddItems");
+            this.AddItems.Name = "AddItems";
+            this.AddItems.UseVisualStyleBackColor = true;
+            this.AddItems.Click += new System.EventHandler(this.AddItems_Click);
             // 
             // Form1
             // 
@@ -171,15 +180,15 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.Button Move;
+        private System.Windows.Forms.Button GetElementValue;
         private System.Windows.Forms.Button remove;
+        private System.Windows.Forms.Button AddItems;
     }
 }
-
