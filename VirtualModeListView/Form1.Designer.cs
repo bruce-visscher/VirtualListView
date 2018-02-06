@@ -40,10 +40,12 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SortLV = new System.Windows.Forms.Button();
+            this.sort_button = new System.Windows.Forms.Button();
+            this.AddItems = new System.Windows.Forms.Button();
             this.remove = new System.Windows.Forms.Button();
             this.GetElementValue = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.AddItems = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,13 +88,13 @@
             resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // listView1
+            // listView
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.listView.FullRowSelect = true;
-            resources.ApplyResources(this.listView, "listView1");
-            this.listView.Name = "listView1";
+            resources.ApplyResources(this.listView, "listView");
+            this.listView.Name = "listView";
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
             this.listView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listView1_RetrieveVirtualItem);
@@ -119,6 +121,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.SortLV);
+            this.panel1.Controls.Add(this.sort_button);
             this.panel1.Controls.Add(this.AddItems);
             this.panel1.Controls.Add(this.remove);
             this.panel1.Controls.Add(this.GetElementValue);
@@ -126,6 +130,23 @@
             this.panel1.Controls.Add(this.listView);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // SortLV
+            // 
+            resources.ApplyResources(this.SortLV, "SortLV");
+            this.SortLV.Name = "SortLV";
+            // 
+            // sort_button
+            // 
+            resources.ApplyResources(this.sort_button, "sort_button");
+            this.sort_button.Name = "sort_button";
+            // 
+            // AddItems
+            // 
+            resources.ApplyResources(this.AddItems, "AddItems");
+            this.AddItems.Name = "AddItems";
+            this.AddItems.UseVisualStyleBackColor = true;
+            this.AddItems.Click += new System.EventHandler(this.AddItems_Click);
             // 
             // remove
             // 
@@ -146,13 +167,6 @@
             resources.ApplyResources(this.listView2, "listView2");
             this.listView2.Name = "listView2";
             this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // AddItems
-            // 
-            resources.ApplyResources(this.AddItems, "AddItems");
-            this.AddItems.Name = "AddItems";
-            this.AddItems.UseVisualStyleBackColor = true;
-            this.AddItems.Click += new System.EventHandler(this.AddItems_Click);
             // 
             // Form1
             // 
@@ -190,5 +204,7 @@
         private System.Windows.Forms.Button GetElementValue;
         private System.Windows.Forms.Button remove;
         private System.Windows.Forms.Button AddItems;
+        private System.Windows.Forms.Button sort_button;
+        private System.Windows.Forms.Button SortLV;
     }
 }
