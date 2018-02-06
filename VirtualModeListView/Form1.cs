@@ -9,8 +9,6 @@ namespace VirtualModeListView
     {
         private static int maxLines = 5;
 
-        private NumberText nt = new NumberText();
-
         System.Collections.Generic.List<ListViewItem> listOfLVI = new List<ListViewItem>();
         ListViewItem NewListViewItem = null;
         System.Collections.Generic.List<String> listNew = new System.Collections.Generic.List<String>();
@@ -57,12 +55,6 @@ namespace VirtualModeListView
             lvi.SubItems.Add(lvsi);
 
             e.Item = lvi;
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutBox1 ab1 = new AboutBox1();
-            ab1.ShowDialog(this);
         }
 
         private void Move_Click(object sender, EventArgs e)
@@ -138,6 +130,11 @@ namespace VirtualModeListView
                 });
 
             listView.VirtualListSize = maxLines;
+        }
+
+        private void listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

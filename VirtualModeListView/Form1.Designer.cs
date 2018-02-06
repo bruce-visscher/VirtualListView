@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,53 +37,22 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SortLV = new System.Windows.Forms.Button();
-            this.sort_button = new System.Windows.Forms.Button();
             this.AddItems = new System.Windows.Forms.Button();
             this.remove = new System.Windows.Forms.Button();
             this.GetElementValue = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSplitButton1,
-            this.toolStripSplitButton2});
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.Name = "toolStrip1";
-            // 
-            // toolStripSplitButton1
-            // 
-            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.toolStripSplitButton1.Image = global::VirtualModeListView.Properties.Resources.structure;
-            resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // toolStripSplitButton2
-            // 
-            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.toolStripSplitButton2.Image = global::VirtualModeListView.Properties.Resources.Netcard;
-            resources.ApplyResources(this.toolStripSplitButton2, "toolStripSplitButton2");
-            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // listView
             // 
@@ -98,6 +64,11 @@
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
             this.listView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listView1_RetrieveVirtualItem);
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
             // 
             // statusStrip1
             // 
@@ -121,25 +92,12 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.SortLV);
-            this.panel1.Controls.Add(this.sort_button);
             this.panel1.Controls.Add(this.AddItems);
             this.panel1.Controls.Add(this.remove);
             this.panel1.Controls.Add(this.GetElementValue);
-            this.panel1.Controls.Add(this.listView2);
             this.panel1.Controls.Add(this.listView);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // SortLV
-            // 
-            resources.ApplyResources(this.SortLV, "SortLV");
-            this.SortLV.Name = "SortLV";
-            // 
-            // sort_button
-            // 
-            resources.ApplyResources(this.sort_button, "sort_button");
-            this.sort_button.Name = "sort_button";
             // 
             // AddItems
             // 
@@ -162,23 +120,14 @@
             this.GetElementValue.UseVisualStyleBackColor = true;
             this.GetElementValue.Click += new System.EventHandler(this.Move_Click);
             // 
-            // listView2
-            // 
-            resources.ApplyResources(this.listView2, "listView2");
-            this.listView2.Name = "listView2";
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -188,11 +137,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -200,11 +145,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button GetElementValue;
         private System.Windows.Forms.Button remove;
         private System.Windows.Forms.Button AddItems;
-        private System.Windows.Forms.Button sort_button;
-        private System.Windows.Forms.Button SortLV;
     }
 }

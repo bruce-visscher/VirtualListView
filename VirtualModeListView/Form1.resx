@@ -117,64 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 0</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 26</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="toolStripSplitButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripSplitButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 36</value>
-  </data>
-  <data name="toolStripSplitButton1.Text" xml:space="preserve">
-    <value>File</value>
+    <value>32, 19</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 26</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="toolStripSplitButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripSplitButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 36</value>
-  </data>
-  <data name="toolStripSplitButton2.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>951, 39</value>
+    <value>32, 19</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
   <data name="listView.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 20</value>
@@ -195,27 +147,15 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;listView.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 297</value>
+    <value>141, 17</value>
   </metadata>
-  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 20</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStripStatusLabel2.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 20</value>
-  </data>
-  <data name="toolStripStatusLabel2.Text" xml:space="preserve">
-    <value>toolStripStatusLabel2</value>
-  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 368</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 19, 0</value>
   </data>
@@ -238,49 +178,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SortLV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="SortLV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="SortLV.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SortLV.Name" xml:space="preserve">
-    <value>SortLV</value>
-  </data>
-  <data name="&gt;&gt;SortLV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SortLV.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;SortLV.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="sort_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="sort_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="sort_button.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;sort_button.Name" xml:space="preserve">
-    <value>sort_button</value>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 20</value>
   </data>
-  <data name="&gt;&gt;sort_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="toolStripStatusLabel2.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="&gt;&gt;sort_button.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 20</value>
   </data>
-  <data name="&gt;&gt;sort_button.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="toolStripStatusLabel2.Text" xml:space="preserve">
+    <value>toolStripStatusLabel2</value>
   </data>
   <data name="AddItems.Location" type="System.Drawing.Point, System.Drawing">
     <value>394, 292</value>
@@ -304,7 +214,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;AddItems.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="remove.Location" type="System.Drawing.Point, System.Drawing">
     <value>259, 291</value>
@@ -328,7 +238,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;remove.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="GetElementValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 289</value>
@@ -352,40 +262,19 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;GetElementValue.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>786, 20</value>
-  </data>
-  <data name="listView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 265</value>
-  </data>
-  <data name="listView2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listView2.Name" xml:space="preserve">
-    <value>listView2</value>
-  </data>
-  <data name="&gt;&gt;listView2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listView2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;listView2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 39</value>
+    <value>0, 0</value>
   </data>
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>951, 329</value>
+    <value>951, 368</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -437,23 +326,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Virtual mode listview</value>
   </data>
-  <data name="&gt;&gt;toolStripSplitButton1.Name" xml:space="preserve">
-    <value>toolStripSplitButton1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
     <value>exitToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButton2.Name" xml:space="preserve">
-    <value>toolStripSplitButton2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
     <value>aboutToolStripMenuItem</value>
