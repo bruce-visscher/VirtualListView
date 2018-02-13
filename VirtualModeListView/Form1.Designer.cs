@@ -32,14 +32,16 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SelectAll = new System.Windows.Forms.Button();
             this.AddItems = new System.Windows.Forms.Button();
             this.remove = new System.Windows.Forms.Button();
             this.GetElementValue = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Randomtext = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,18 +59,14 @@
             // listView
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+            this.columnHeader1,
+            this.Randomtext});
             this.listView.FullRowSelect = true;
             resources.ApplyResources(this.listView, "listView");
             this.listView.Name = "listView";
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
             this.listView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listView1_RetrieveVirtualItem);
-            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
             // 
             // statusStrip1
             // 
@@ -92,12 +90,20 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.SelectAll);
             this.panel1.Controls.Add(this.AddItems);
             this.panel1.Controls.Add(this.remove);
             this.panel1.Controls.Add(this.GetElementValue);
             this.panel1.Controls.Add(this.listView);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // SelectAll
+            // 
+            resources.ApplyResources(this.SelectAll, "SelectAll");
+            this.SelectAll.Name = "SelectAll";
+            this.SelectAll.UseVisualStyleBackColor = true;
+            this.SelectAll.Click += new System.EventHandler(this.SelectAll_Click);
             // 
             // AddItems
             // 
@@ -120,6 +126,14 @@
             this.GetElementValue.UseVisualStyleBackColor = true;
             this.GetElementValue.Click += new System.EventHandler(this.Move_Click);
             // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            // 
+            // Randomtext
+            // 
+            resources.ApplyResources(this.Randomtext, "Randomtext");
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -140,7 +154,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ListView listView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
@@ -148,5 +161,8 @@
         private System.Windows.Forms.Button GetElementValue;
         private System.Windows.Forms.Button remove;
         private System.Windows.Forms.Button AddItems;
+        private System.Windows.Forms.Button SelectAll;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader Randomtext;
     }
 }

@@ -7,10 +7,10 @@ namespace VirtualModeListView
 {
     public partial class Form1 : Form
     {
-        private static int maxLines = 5;
+        private static int maxLines = 10;
 
-        System.Collections.Generic.List<ListViewItem> listOfLVI = new List<ListViewItem>();
-        ListViewItem NewListViewItem = null;
+        System.Collections.Generic.List<ListViewItem> listOfAvailLVI = new List<ListViewItem>();
+        ListViewItem newListViewItem = null;
         System.Collections.Generic.List<String> listNew = new System.Collections.Generic.List<String>();
 
         public Form1()
@@ -32,29 +32,32 @@ namespace VirtualModeListView
 
             for (int l = 0; l < maxLines; l++)
             {
-                NewListViewItem = new ListViewItem("OrgName " + l + "NG");
-                NewListViewItem.Name = "OrgKey" + l;
-                listOfLVI.Add(NewListViewItem);
-            }
+                newListViewItem = new ListViewItem();
+                newListViewItem.Name = "newListViewItem_Name" + l;
+                newListViewItem.Text = "newListViewItem_Text" + l;
+                newListViewItem.Tag = "newListViewItem_Tag" + l;
+                newListViewItem.SubItems.Add("SubItems_Add" + l);
+                newListViewItem.SubItems[1].Text = "SubItems_text" + l;               
 
-            PropertyInfo aProp = typeof(ListView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
-            aProp.SetValue(listView, true, null);
+                listOfAvailLVI.Add(newListViewItem);
+            }
+            Console.WriteLine("");
         }
 
         private void listView1_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            foreach (ListViewItem each in listOfLVI)
+            ListViewItem it = new ListViewItem(listOfAvailLVI[e.ItemIndex].Text);
+
+            int index = e.ItemIndex;
+            if (listOfAvailLVI[e.ItemIndex].SubItems.Count > 0)
             {
-                // Console.WriteLine(each.Text);
+                String subItemTextIndexOne = listOfAvailLVI[e.ItemIndex].SubItems[1].Text;
+                if (!String.IsNullOrEmpty(subItemTextIndexOne))
+                {
+                    it.SubItems.Add(subItemTextIndexOne);
+                }
             }
-            ListViewItem lvi = new ListViewItem();
-            lvi = listOfLVI[e.ItemIndex];
-
-            ListViewItem.ListViewSubItem lvsi = new ListViewItem.ListViewSubItem();
-            lvsi.Text = lvi.Text;
-            lvi.SubItems.Add(lvsi);
-
-            e.Item = lvi;
+            e.Item = it;
         }
 
         private void Move_Click(object sender, EventArgs e)
@@ -90,7 +93,7 @@ namespace VirtualModeListView
 
             foreach (int indexOfElementToRemove in listOfIndexestoRemove)
             {
-                listOfLVI.RemoveAt(indexOfElementToRemove);
+                listOfAvailLVI.RemoveAt(indexOfElementToRemove);
                 maxLines = maxLines - 1;
             }
             listView.VirtualListSize = maxLines;
@@ -99,32 +102,21 @@ namespace VirtualModeListView
         // Add Item
         private void AddItems_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("maxLines: " + maxLines);
-            int count = maxLines;
-            for (int l = count; l < (count + 5); l++)
+           int count = maxLines;
+            for (int l = count; l < (count + 500); l++)
             {
-                NewListViewItem = new ListViewItem("OrgName " + l + "FZZ");
-                NewListViewItem.Name = "OrgKey" + l;
-                listOfLVI.Add(NewListViewItem);
+                newListViewItem = new ListViewItem();
+                newListViewItem.Name = "newListViewItem_Name" + l;
+                newListViewItem.Text = "newListViewItem_Text" + l;
+                newListViewItem.Tag = "newListViewItem_Tag" + l;
+                newListViewItem.SubItems.Add("SubItems_Add" + l);
+                newListViewItem.SubItems[1].Text = "SubItems_text" + l;
+
+                listOfAvailLVI.Add(newListViewItem);
                 maxLines = maxLines + 1;
             }
-
-            foreach (ListViewItem each in listOfLVI)
-            {
-                String eachString = each.Text;
-            }
-
-            NewListViewItem = new ListViewItem("OrgName " + 1 + "FZZ");
-            NewListViewItem.Name = "OrgKey" + 1;
-            listOfLVI.Add(NewListViewItem);
-            maxLines = maxLines + 1;
-
-            NewListViewItem = new ListViewItem("OrgName " + 2 + "FZZ");
-            NewListViewItem.Name = "OrgKey" + 2;
-            listOfLVI.Add(NewListViewItem);
-            maxLines = maxLines + 1;
-
-            listOfLVI.Sort(delegate (ListViewItem x, ListViewItem y)
+            
+            listOfAvailLVI.Sort(delegate (ListViewItem x, ListViewItem y)
                 {
                     return (x.Text).CompareTo(y.Text);
                 });
@@ -132,9 +124,19 @@ namespace VirtualModeListView
             listView.VirtualListSize = maxLines;
         }
 
-        private void listView_SelectedIndexChanged(object sender, EventArgs e)
+        private void SelectAll_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < listView.VirtualListSize; i++)
+            {
+                listView.Items[i].Selected = true;
+            }
 
+            // Get element text of selected Index
+            ListView.SelectedIndexCollection col = listView.SelectedIndices;
+            foreach (var eachItemInCollection in col)
+            {
+                Console.WriteLine(listView.Items[Convert.ToInt32(eachItemInCollection)].Text);
+            }
         }
     }
 }
