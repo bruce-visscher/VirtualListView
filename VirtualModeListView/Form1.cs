@@ -8,6 +8,7 @@ namespace VirtualModeListView
     public partial class Form1 : Form
     {
         private static int maxLines = 10;
+        private static int count = 0;
 
         System.Collections.Generic.List<ListViewItem> listOfAvailLVI = new List<ListViewItem>();
         ListViewItem newListViewItem = null;
@@ -37,7 +38,8 @@ namespace VirtualModeListView
                 newListViewItem.Text = "newListViewItem_Text" + l;
                 newListViewItem.Tag = "newListViewItem_Tag" + l;
                 newListViewItem.SubItems.Add("SubItems_Add" + l);
-                newListViewItem.SubItems[1].Text = "SubItems_text" + l;               
+
+                newListViewItem.SubItems[1].Text = "SubItems_text" + l;
 
                 listOfAvailLVI.Add(newListViewItem);
             }
@@ -49,14 +51,29 @@ namespace VirtualModeListView
             ListViewItem it = new ListViewItem(listOfAvailLVI[e.ItemIndex].Text);
 
             int index = e.ItemIndex;
-            if (listOfAvailLVI[e.ItemIndex].SubItems.Count > 0)
+            count = listOfAvailLVI[e.ItemIndex].SubItems.Count;
+
+            String subItemTextIndex;
+            if (count == 1) // No subitem
             {
-                String subItemTextIndexOne = listOfAvailLVI[e.ItemIndex].SubItems[1].Text;
-                if (!String.IsNullOrEmpty(subItemTextIndexOne))
+                subItemTextIndex = listOfAvailLVI[e.ItemIndex].SubItems[0].Text;
+                it.SubItems.Add("");
+            }
+            else // count = 2   
+            /*
+              1 subitem. Count 2 means 
+              1st item(0 index) is listOfAvailLVI[e.ItemIndex].Text
+              and
+              2nd Item(1st index) is listOfAvailLVI[e.ItemIndex].SubItems[1].Text
+            */
+            {
+                subItemTextIndex = listOfAvailLVI[e.ItemIndex].SubItems[1].Text;
+                if (!String.IsNullOrEmpty(subItemTextIndex))
                 {
-                    it.SubItems.Add(subItemTextIndexOne);
+                    it.SubItems.Add(subItemTextIndex);
                 }
             }
+
             e.Item = it;
         }
 
@@ -102,24 +119,34 @@ namespace VirtualModeListView
         // Add Item
         private void AddItems_Click(object sender, EventArgs e)
         {
-           int count = maxLines;
-            for (int l = count; l < (count + 500); l++)
+            Console.WriteLine("maxLines: " + maxLines);
+            int count = maxLines;
+            for (int l = count; l < (count + 10); l++)
             {
-                newListViewItem = new ListViewItem();
-                newListViewItem.Name = "newListViewItem_Name" + l;
-                newListViewItem.Text = "newListViewItem_Text" + l;
-                newListViewItem.Tag = "newListViewItem_Tag" + l;
-                newListViewItem.SubItems.Add("SubItems_Add" + l);
-                newListViewItem.SubItems[1].Text = "SubItems_text" + l;
-
+                newListViewItem = new ListViewItem("OrgName " + l + "FZZ");
+                newListViewItem.Name = "OrgKey" + l;
                 listOfAvailLVI.Add(newListViewItem);
                 maxLines = maxLines + 1;
             }
-            
+
+            foreach (ListViewItem each in listOfAvailLVI)
+            {
+                String eachString = each.Text;
+            }
+
+            newListViewItem = new ListViewItem();
+            newListViewItem.Name = "newListViewItem_Name";
+            newListViewItem.Text = "newListViewItem_Text";
+            newListViewItem.SubItems.Add("123");
+            newListViewItem.SubItems[1].Text = "123";
+
+            listOfAvailLVI.Add(newListViewItem);
+            maxLines = maxLines + 1;
+
             listOfAvailLVI.Sort(delegate (ListViewItem x, ListViewItem y)
-                {
-                    return (x.Text).CompareTo(y.Text);
-                });
+            {
+                return (x.Text).CompareTo(y.Text);
+            });
 
             listView.VirtualListSize = maxLines;
         }
