@@ -1,5 +1,0 @@
-C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\Form1.cs;C:\Users\BV051424\gitrepos\external\VirtualListView\.klocwork\VirtualModeListView\cs.kwlp\ds\1\cuhn5bwx.5sf;1;0;False;9BDA4736F630B1723CF1F99BB27C0CCD5C21C07A;False
-C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\Form1.Designer.cs;C:\Users\BV051424\gitrepos\external\VirtualListView\.klocwork\VirtualModeListView\cs.kwlp\ds\2\r1d5uc4h.m1n;2;0;False;1F88603CB47D7184F44486BA2417AB08B301D9C7;False
-C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\Program.cs;C:\Users\BV051424\gitrepos\external\VirtualListView\.klocwork\VirtualModeListView\cs.kwlp\ds\3\xafysjwh.itm;3;0;False;A3619D67EA0EF28CC444F3A7C3DBB63206345387;False
-C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\Properties\AssemblyInfo.cs;;4;0;False;6DE147EEC91785DD239056533812B7702C973F55;False
-C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\Properties\Settings.Designer.cs;;5;0;False;37232A18ECD3DEFA56A3D552280BF303E55F9E54;False
