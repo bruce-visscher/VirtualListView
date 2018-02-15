@@ -7,3 +7,10 @@ C:\Users\NG043556\Desktop\Virtual ListView\VirtualModeListViewSources\VirtualMod
 C:\Users\NG043556\Desktop\Virtual ListView\VirtualModeListViewSources\VirtualModeListView\VirtualModeListView\obj\Release\VirtualModeListView.csproj.GenerateResource.Cache
 C:\Users\NG043556\Desktop\Virtual ListView\VirtualModeListViewSources\VirtualModeListView\VirtualModeListView\obj\Release\VirtualModeListView.exe
 C:\Users\NG043556\Desktop\Virtual ListView\VirtualModeListViewSources\VirtualModeListView\VirtualModeListView\obj\Release\VirtualModeListView.pdb
+C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\bin\Release\VirtualModeListView.exe
+C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\bin\Release\VirtualModeListView.pdb
+C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\obj\Release\VirtualModeListView.csprojResolveAssemblyReference.cache
+C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\obj\Release\VirtualModeListView.Form1.resources
+C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\obj\Release\VirtualModeListView.csproj.GenerateResource.Cache
+C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\obj\Release\VirtualModeListView.exe
+C:\Users\BV051424\gitrepos\external\VirtualListView\VirtualModeListView\obj\Release\VirtualModeListView.pdb
