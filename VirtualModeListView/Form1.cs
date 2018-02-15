@@ -37,8 +37,8 @@ namespace VirtualModeListView
                 newListViewItem.Name = "newListViewItem_Name" + l;
                 newListViewItem.Text = "newListViewItem_Text" + l;
                 newListViewItem.Tag = "newListViewItem_Tag" + l;
-                newListViewItem.SubItems.Add("SubItems_Add" + l);
 
+                newListViewItem.SubItems.Add("wdcdwc" + l);
                 newListViewItem.SubItems[1].Text = "SubItems_text" + l;
 
                 listOfAvailLVI.Add(newListViewItem);
@@ -48,32 +48,7 @@ namespace VirtualModeListView
 
         private void listView1_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            ListViewItem it = new ListViewItem(listOfAvailLVI[e.ItemIndex].Text);
-
-            int index = e.ItemIndex;
-            count = listOfAvailLVI[e.ItemIndex].SubItems.Count;
-
-            String subItemTextIndex;
-            if (count == 1) // No subitem
-            {
-                subItemTextIndex = listOfAvailLVI[e.ItemIndex].SubItems[0].Text;
-                it.SubItems.Add("");
-            }
-            else // count = 2   
-            /*
-              1 subitem. Count 2 means 
-              1st item(0 index) is listOfAvailLVI[e.ItemIndex].Text
-              and
-              2nd Item(1st index) is listOfAvailLVI[e.ItemIndex].SubItems[1].Text
-            */
-            {
-                subItemTextIndex = listOfAvailLVI[e.ItemIndex].SubItems[1].Text;
-                if (!String.IsNullOrEmpty(subItemTextIndex))
-                {
-                    it.SubItems.Add(subItemTextIndex);
-                }
-            }
-
+            ListViewItem it = listOfAvailLVI[e.ItemIndex];
             e.Item = it;
         }
 
@@ -121,22 +96,33 @@ namespace VirtualModeListView
         {
             Console.WriteLine("maxLines: " + maxLines);
             int count = maxLines;
+
+            // Empty Subitems
             for (int l = count; l < (count + 10); l++)
             {
                 newListViewItem = new ListViewItem("OrgName " + l + "FZZ");
                 newListViewItem.Name = "OrgKey" + l;
+
+                String ConfidLevelDesc = "";
+                String OrganizationName = "OrgName";
+                
+               // if (!String.IsNullOrEmpty(ConfidLevelDesc))
+                {
+                    newListViewItem.SubItems.Add(ConfidLevelDesc);
+                    newListViewItem.SubItems.Add(OrganizationName);
+
+                    newListViewItem.SubItems[1].Text = ConfidLevelDesc;
+                    newListViewItem.SubItems[2].Text = OrganizationName;
+                }
+
                 listOfAvailLVI.Add(newListViewItem);
                 maxLines = maxLines + 1;
             }
 
-            foreach (ListViewItem each in listOfAvailLVI)
-            {
-                String eachString = each.Text;
-            }
-
+            // With Subitem
             newListViewItem = new ListViewItem();
             newListViewItem.Name = "newListViewItem_Name";
-            newListViewItem.Text = "newListViewItem_Text";
+            newListViewItem.Text = "testListViewItem_Text";
             newListViewItem.SubItems.Add("123");
             newListViewItem.SubItems[1].Text = "123";
 
