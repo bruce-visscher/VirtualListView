@@ -7,8 +7,7 @@ namespace VirtualModeListView
 {
     public partial class Form1 : Form
     {
-        private static int maxLines = 10;
-        private static int count = 0;
+        private static int maxLines = 10000;
 
         System.Collections.Generic.List<ListViewItem> listOfAvailLVI = new List<ListViewItem>();
         ListViewItem newListViewItem = null;
@@ -46,11 +45,14 @@ namespace VirtualModeListView
             Console.WriteLine("");
         }
 
-        private void listView1_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
-        {
-            ListViewItem it = listOfAvailLVI[e.ItemIndex];
-            e.Item = it;
-        }
+      private void listView1_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+      {
+         ListViewItem it = listOfAvailLVI[e.ItemIndex];
+         it.Checked = true;
+         if (e.ItemIndex % 2 == 0)
+            it.Checked = false;
+         e.Item = it;
+      }
 
         private void Move_Click(object sender, EventArgs e)
         {
